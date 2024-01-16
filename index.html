@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fudgie Resturant</title>
+    <style>
+        @font-face {
+            font-family: Bebas;
+            src: url(../Font/BebasNeue-Regular.ttf);
+        }
+
+        body {
+            margin: 16px 32px;
+            padding: 0;
+            font-family: Bebas;
+            font-size: 16px;
+            background-color: #FAFAFA;
+        }
+
+
+        html {
+            margin: 0 auto;
+            max-width: 1600px;
+            overflow-x: hidden;
+        }
+
+
+        /* Header */
+
+
+        header {
+            background-color: #fff;
+            box-shadow: 1px 2px 5px 0px #2020201e;
+            border-radius: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px;
+        }
+
+
+        .logo img {
+            width: 70px;
+        }
+
+        .menu ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+        }
+
+        .menu ul li {
+            padding: 0px 1rem;
+            font-size: 1.2rem;
+            transition: all ease .2s;
+            cursor: pointer;
+        }
+
+        .menu ul li:hover {
+            color: #FC6720;
+        }
+
+
+        .B-Menu {
+            color: #fff;
+            background-color: #FC6720;
+            padding: .5rem;
+            border-radius: .5rem;
+            font-size: 1.2rem;
+            border: none;
+            outline: none;
+            display: none;
+        }
+
+
+        .burger-menuClose {
+            background-color: #FC6720;
+            width: 300px;
+            height: 1000px;
+            position: absolute;
+            top: 0;
+            right: -700px;
+            transition: all ease .8s;
+        }
+
+        .burger-menuOpen {
+            background-color: #FC6720;
+            width: 300px;
+            height: 1000px;
+            position: absolute;
+            top: 0;
+            right: 0px;
+            transition: all ease .8s;
+        }
+
+        #Menu-b ul {
+            list-style: none;
+            text-align: center;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        #Menu-b ul li {
+            margin: 1rem 0;
+            cursor: pointer;
+        }
+
+        #Menu-b button {
+            color: #fff;
+            font-size: 2rem;
+            margin: 1rem;
+            border: none;
+            outline: none;
+            background-color: transparent;
+        }
+
+        .cart {
+            color: #fff;
+            background-color: #FC6720;
+            padding: .5rem;
+            border-radius: .5rem;
+            font-size: 1.2rem;
+            margin-right: .2rem;
+        }
+
+        .User {
+            color: #fff;
+            background-color: #FC6720;
+            padding: .5rem;
+            border-radius: .5rem;
+            font-size: 1.2rem;
+            margin-left: .2rem;
+        }
+
+
+
+        /* Main Cantent */
+
+
+
+        .fudgie-res {
+            margin: 1rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* .res-cantent {} */
+
+        .res-cantent h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        .res-cantent p {
+            font-size: 1.2rem;
+        }
+
+        .fresh {
+            color: #0f0;
+        }
+
+        .healthy {
+            color: #FC6720;
+        }
+
+        .view-menu {
+            background-color: #FC6720;
+            color: #fff;
+            text-decoration: none;
+            padding: .5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 1.2rem;
+            margin-right: .5rem;
+        }
+
+        .contact-us {
+            background-color: #ffe2d4;
+            color: #FC6720;
+            text-decoration: none;
+            padding: .5rem 1.5rem;
+            border-radius: 2rem;
+            font-size: 1.2rem;
+            margin-left: .5rem;
+        }
+
+        /* .res-image {} */
+
+        .res-image img {
+            width: 500px;
+        }
+
+
+
+        /* Popular Food */
+
+
+
+        .popular-Food-txt {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .popular-Food {
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+
+        .food {
+            background-color: #fff;
+            text-align: center;
+            border-radius: 1rem;
+            box-shadow: 1px 2px 5px 0px #2020201e;
+            padding: .5rem;
+            margin: 1rem;
+            width: 20%;
+        }
+
+        .food img {
+            width: 100%;
+            border-radius: 1rem;
+        }
+
+        .food h4 {
+            margin: .5rem;
+        }
+
+
+        /* Business Policy */
+
+
+        .business-policy-txt {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .business-policy {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .policy {
+            background-color: #fff;
+            text-align: center;
+            border-radius: 1rem;
+            box-shadow: 1px 2px 5px 0px #2020201e;
+            padding: .5rem;
+            margin: 1rem;
+            width: 20%;
+        }
+
+
+        /* About Us */
+
+
+        .about-us {
+            background-color: #fff;
+            border-radius: 1rem;
+            box-shadow: 1px 2px 5px 0px #2020201e;
+            padding: 1rem;
+            margin: 2rem 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* .about-cantent {} */
+
+        .about-cantent h2 {
+            font-size: 3rem;
+        }
+
+        .about-cantent p {
+            font-size: 1.3rem;
+            max-width: 700px;
+        }
+
+        .about-img img {
+            width: 500px;
+            height: 500px;
+            /* border-radius: 50% 50px 50% 50px; */
+            border-radius: 50% 50px 50px 50%;
+        }
+
+
+        /* Recommended Food */
+
+
+        .recommended-dishes-txt {
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        .recommended-dishes {
+            display: flex;
+            justify-content: space-around;
+            align-items: stretch;
+            flex-wrap: wrap;
+        }
+
+        .re-food {
+            background-color: #fff;
+            text-align: center;
+            border-radius: 1rem;
+            box-shadow: 1px 2px 5px 0px #2020201e;
+            padding: .5rem;
+            margin: 1rem;
+            width: 20%;
+        }
+
+        .re-food img {
+            width: 100%;
+            border-radius: 1rem;
+        }
+
+
+        /* Footer */
+
+
+        footer {
+            background-color: #fff;
+            display: flex;
+            justify-content: space-around;
+            align-items: start;
+            flex-wrap: wrap;
+            padding: 40px 40px;
+            margin: 50px 0px;
+            margin-bottom: 10px;
+            box-shadow: 1px 2px 5px 0px #2020201e;
+            border-radius: 1rem;
+
+        }
+
+        .Fudgie-footer {
+            max-width: 700px;
+        }
+
+        .Fudgie-footer img {
+            width: 300px;
+        }
+
+        .copyright {
+            justify-content: center;
+            flex-wrap: wrap;
+            text-align: center;
+            background-color: #fff;
+            box-shadow: 1px 2px 5px 0px #2020201e;
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+
+        .copyright h3 {
+            font-size: 1.3rem;
+            margin-top: 0;
+        }
+
+        .social {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .social li {
+            padding: 0 1rem;
+            font-size: 1.4rem;
+            color: #FC6720;
+            cursor: pointer;
+        }
+
+
+
+        /* Desktop Screen */
+
+
+
+        @media screen and (min-width: 1024px) and (max-width: 1280px) {
+
+            .res-cantent h1 {
+                font-size: 3rem;
+            }
+
+            .res-cantent p {
+                font-size: 1rem;
+            }
+
+            .res-image img {
+                width: 400px;
+            }
+
+            /* Popular Food */
+
+            .popular-Food-txt {
+                font-size: 1.5rem;
+            }
+
+            .food {
+                width: 25%;
+            }
+
+            /* Business Policy */
+
+            .business-policy-txt {
+                font-size: 1.5rem;
+            }
+
+            .business-policy {
+                flex-wrap: wrap;
+            }
+
+            .policy {
+                width: 40%;
+            }
+
+
+            /* About Us */
+
+            .about-us {
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap-reverse;
+            }
+
+            /* .about-cantent {} */
+
+            .about-img img {
+                border-radius: 50% 50px 50% 50px;
+            }
+
+
+            /* Recommended Food */
+
+
+            .recommended-dishes-txt {
+                font-size: 1.5rem;
+            }
+
+            .re-food {
+                width: 40%;
+            }
+
+
+
+            /* Footer */
+
+            .Fudgie-footer {
+                max-width: 800px;
+            }
+
+            .Fudgie-footer img {
+                width: 200px;
+            }
+        }
+
+
+
+        /* Tablet Screen */
+
+
+
+        @media screen and (min-width: 768px) and (max-width: 1023px) {
+
+            .fudgie-res {
+                margin: 1rem 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            /* .res-cantent {} */
+
+            .res-cantent h1 {
+                font-size: 3.5rem;
+                margin: 0;
+            }
+
+            .res-cantent p {
+                font-size: 1rem;
+            }
+
+            /* Popular Food */
+
+            .popular-Food {
+                display: flex;
+                justify-content: space-around;
+                align-items: stretch;
+                flex-wrap: wrap;
+            }
+
+            .food {
+                background-color: #fff;
+                text-align: center;
+                border-radius: 1rem;
+                box-shadow: 1px 2px 5px 0px #2020201e;
+                padding: .5rem;
+                margin: 1rem;
+                width: 25%;
+            }
+
+            /* Business Policy */
+
+            .business-policy {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .policy {
+                background-color: #fff;
+                text-align: center;
+                border-radius: 1rem;
+                box-shadow: 1px 2px 5px 0px #2020201e;
+                padding: .5rem;
+                margin: 1rem;
+                width: 100%;
+            }
+
+
+            /* About Us */
+
+
+            .about-us {
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap-reverse;
+            }
+
+            .about-img img {
+                border-radius: 50% 50px 50% 50px;
+            }
+
+
+            /* Recommended Food */
+
+
+            .re-food {
+                width: 40%;
+            }
+        }
+
+
+
+        /* Mobile Screen */
+
+
+
+        @media screen and (max-width: 767px) {
+            .menu {
+                display: none;
+            }
+
+
+            .cart {
+                display: none;
+            }
+
+            .User {
+                display: none;
+            }
+
+            .B-Menu {
+                display: block;
+            }
+
+            /* Main Cantent */
+
+
+
+            .fudgie-res {
+                flex-wrap: wrap;
+            }
+
+            .res-cantent h1 {
+                font-size: 2.5rem;
+                margin: 0;
+            }
+
+            .res-cantent p {
+                font-size: 1rem;
+            }
+
+            /* Popular Food */
+
+            .food {
+                width: 35%;
+            }
+
+
+            /* Business Policy */
+
+            .business-policy {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+            }
+
+            .policy {
+                width: 100%;
+            }
+
+
+            /* About Us */
+
+
+            .about-us {
+                background-color: #fff;
+                border-radius: 1rem;
+                box-shadow: 1px 2px 5px 0px #2020201e;
+                padding: 1rem;
+                margin: 2rem 1rem;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                flex-wrap: wrap-reverse;
+            }
+
+            .about-cantent h2 {
+                font-size: 2rem;
+            }
+
+            .about-cantent p {
+                font-size: 1rem;
+            }
+
+            .about-img img {
+                border-radius: 50% 50px 50% 50px;
+                width: 300px;
+                height: 300px;
+            }
+
+
+            /* Recommended Food */
+
+            .re-food {
+                width: 35%;
+            }
+
+            /* Footer */
+
+            footer {
+                background-color: #fff;
+                display: flex;
+                justify-content: space-around;
+                align-items: start;
+                flex-wrap: wrap;
+                padding: 40px 40px;
+                margin: 50px 0px;
+                margin-bottom: 10px;
+                box-shadow: 1px 2px 5px 0px #2020201e;
+                border-radius: 1rem;
+
+            }
+
+            .Fudgie-footer {
+                max-width: 700px;
+            }
+
+            .Fudgie-footer img {
+                width: 200px;
+            }
+
+            .copyright {
+                justify-content: center;
+                flex-wrap: wrap;
+                text-align: center;
+                background-color: #fff;
+                box-shadow: 1px 2px 5px 0px #2020201e;
+                border-radius: 1rem;
+                padding: 1rem;
+            }
+
+            .copyright h3 {
+                font-size: 1.3rem;
+                margin-top: 0;
+            }
+
+            .social {
+                list-style: none;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+            }
+
+            .social li {
+                padding: 0 1rem;
+                font-size: 1.4rem;
+                color: #FC6720;
+                cursor: pointer;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- header -->
+        <header>
+            <div class="logo">
+                <img src="Image/Fudgie icon.png" alt="Fudgie">
+            </div>
+            <div class="menu">
+                <ul>
+                    <li>Home</li>
+                    <li>Contact Us</li>
+                    <li>About Us</li>
+                    <li>Food Menu</li>
+                </ul>
+            </div>
+            <div class="h-btn">
+                <a href="#" class="cart"><i class="fas fa-shopping-cart"></i></a>
+                <a href="#" class="User"><i class="fas fa-user-circle"></i></a>
+                <button class="B-Menu" onclick="OburgerMenu()"><i class="fas fa-bars"></i></button>
+            </div>
+        </header>
+        <!-- header End -->
+        <!-- Burger menu -->
+        <div class="burger-menuClose" id="Menu-b">
+            <button onclick="CburgerMenu()"><i class="fas fa-window-close"></i></button>
+            <ul>
+                <li>Home</li>
+                <li>Contact Us</li>
+                <li>About Us</li>
+                <li>Food Menu</li>
+            </ul>
+        </div>
+        <main>
+            <section class="fudgie-res">
+                <div class="res-cantent">
+                    <h1>Choose <span class="fresh">fresh</span> and <span class="healthy">healthy</span> food in our
+                        restaurant.</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus expedita eos nisi voluptates
+                        voluptatibus officia autem voluptatem quo voluptate reprehenderit exercitationem in dolor
+                        aperiam quibusdam tempore sunt ratione maiores consequatur impedit, laborum hic earum suscipit!
+                        Modi sequi iste, debitis atque eum dolore voluptate molestias blanditiis cupiditate culpa. Iusto
+                        nemo voluptatibus dicta alias fuga error sit harum nihil, optio a veniam quae reiciendis itaque.
+                        Nobis vero consequatur possimus repudiandae.</p>
+                    <a href="#" class="view-menu"><i class="fas fa-list"></i> View Menu</a>
+                    <a href="#" class="contact-us"><i class="fas fa-phone"></i> Contact Us</a>
+                </div>
+                <div class="res-image">
+                    <img src="Image/main pizza.png" alt="Fudgie">
+                </div>
+            </section>
+            <h3 class="popular-Food-txt">Our most popular Food</h3>
+            <section class="popular-Food">
+                <div class="food food1"><img src="Image/Pizza.png" alt="">
+                    <h4>Pizza</h4>
+                </div>
+                <div class="food food2"><img src="Image/Smootie.png" alt="">
+                    <h4>Smootie</h4>
+                </div>
+                <div class="food food3"><img src="Image/Spagetty.png" alt="">
+                    <h4>Spagetty</h4>
+                </div>
+                <div class="food food4"><img src="Image/Drink.png" alt="">
+                    <h4>Drink</h4>
+                </div>
+                <div class="food food5"><img src="Image/Burger.png" alt="">
+                    <h4>Burger</h4>
+                </div>
+                <!-- <div class="food food6"><img src="Image/Spaghetti With Meat.png" alt="">
+                    <h4>Spaghetti With Meat</h4>
+                </div> -->
+                <div class="food food7"><img src="Image/Pasta.png" alt="">
+                    <h4>Pasta</h4>
+                </div>
+                <!-- <div class="food food8"><img src="Image/pizza Margherita.png" alt="">
+                    <h4>pizza Margherita</h4>
+                </div> -->
+                <div class="food food9"><img src="Image/Fried chicken.png" alt="">
+                    <h4>Fried chicken</h4>
+                </div>
+                <div class="food food10"><img src="Image/Torkish Salad.png" alt="">
+                    <h4>Salad</h4>
+                </div>
+            </section>
+            <h3 class="business-policy-txt">Our business policy</h3>
+            <section class="business-policy">
+                <div class="policy policy1"><img src="Image/chef.png" alt="">
+                    <h4>Skilled Chef</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nesciunt, veniam!</p>
+                </div>
+                <div class="policy policy2"><img src="Image/terrace.png" alt="">
+                    <h4>Cozy and quiet atmosphere</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia, blanditiis.</p>
+                </div>
+                <div class="policy policy3"><img src="Image/vegetables.png" alt="">
+                    <h4>High quality raw materials</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, voluptas!</p>
+                </div>
+                <div class="policy policy4"><img src="Image/price-list.png" alt="">
+                    <h4>Fair prices</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, molestias!</p>
+                </div>
+            </section>
+            <section class="about-us">
+                <div class="about-cantent">
+                    <h2>About Us</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eum ex quisquam est tempora? Quia,
+                        perspiciatis enim adipisci beatae itaque eligendi doloribus sequi dolorem aliquid incidunt sint
+                        quae! Natus, iusto adipisci accusantium dolorum quis iure fugiat ipsum distinctio? Quisquam
+                        deserunt
+                        corrupti hic, saepe nostrum omnis nihil, esse consequatur itaque quaerat explicabo, sint dolorum
+                        vero nam aspernatur perspiciatis porro. At quia dicta libero rem. Doloribus, exercitationem
+                        omnis
+                        vero, repellendus ratione quasi error hic temporibus, adipisci dolore ipsam dignissimos
+                        laboriosam
+                        accusantium sit fugiat aperiam vel quod perferendis debitis nostrum nesciunt pariatur
+                        reprehenderit.
+                        Ullam harum quis, expedita magnam fuga fugit nobis suscipit amet. Lorem ipsum dolor sit amet
+                        consectetur adipisicing elit. Natus blanditiis consequuntur eaque id soluta, ratione eligendi
+                        dolores amet error exercitationem molestias veritatis, omnis repudiandae nemo optio itaque cum
+                        commodi voluptate.</p>
+                </div>
+                <div class="about-img">
+                    <img src="Image/About-us.jpg" alt="">
+                </div>
+            </section>
+            <h3 class="recommended-dishes-txt">Our recommended dishes</h3>
+            <section class="recommended-dishes">
+                <div class="re-food re-food1"><img src="Image/Spagetty.png" alt="">
+                    <h3>Spaghetti with soy</h3>
+                </div>
+                <div class="re-food re-food2"><img src="Image/Pasta.png" alt="">
+                    <h3>Pizza mixed with meat</h3>
+                </div>
+                <div class="re-food re-food3"><img src="Image/drink-min.jpeg" alt="">
+                    <h3>Cool Strawberry syrup</h3>
+                </div>
+                <div class="re-food re-food4"><img src="Image/Smootie.png" alt="">
+                    <h3>Strawberry smoothie</h3>
+                </div>
+            </section>
+        </main>
+        <!-- container End -->
+        <!-- footer -->
+        <footer>
+            <section class="Fudgie-footer">
+                <img src="Image/Fudgie logo.png" alt="">
+                <h2>Experience the best food with our restaurant.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita vel explicabo eum, aliquid ipsa
+                    necessitatibus tenetur quam? Ea id voluptatem nulla voluptate dolores voluptates incidunt laborum ab
+                    ipsum, corporis quam.</p>
+            </section>
+            <section class="about-site">
+                <ul>
+                    <li class="star">About Site</li>
+                    <li>About us</li>
+                    <li>Contact us</li>
+                    <li>why U.S</li>
+                    <li>Reservation guide</li>
+                </ul>
+            </section>
+            <section class="customer-services">
+                <ul>
+                    <li class="star">customer services</li>
+                    <li>Online support center</li>
+                    <li>Terms and Conditions</li>
+                    <li>Privacy</li>
+                    <li>Frequently Asked Questions</li>
+                </ul>
+            </section>
+            <section class="Useful-links">
+                <ul>
+                    <li class="star">Useful links</li>
+                    <li>customer club</li>
+                    <li>Work with us</li>
+                    <li>Career Opportunities</li>
+                    <li>Discounts</li>
+                </ul>
+            </section>
+        </footer>
+        <div class="copyright">
+            <h3>All material and intellectual rights of this site belong to the Fudgie restaurant . ©</h3>
+            <ul class="social">
+                <li><i class="fas fa-phone"></i></li>
+                <li><i class="fab fa-whatsapp"></i></li>
+                <li><i class="fab fa-instagram"></i></li>
+                <li><i class="fab fa-telegram-plane"></i></li>
+                <li><i class="fab fa-facebook"></i></li>
+            </ul>
+        </div>
+        <!-- footer End -->
+    </div>
+    <script>
+        function OburgerMenu() {
+            document.getElementById("Menu-b").className = "burger-menuOpen";
+        }
+
+        function CburgerMenu() {
+            document.getElementById("Menu-b").className = "burger-menuClose";
+        }
+    </script>
+</body>
+
+</html>
